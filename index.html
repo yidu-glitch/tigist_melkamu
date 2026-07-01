@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date | Melkamu & Tigist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #020617; 
+            color: #f8fafc; 
+            background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #020617 100%);
+            background-attachment: fixed;
+            transition: all 0.5s ease;
+        }
+        .en-font { font-family: 'Playfair Display', serif; }
+        .am-font { font-family: 'Noto Serif Ethiopic', serif; }
+        .gold-text { color: #d4af37; }
+        .luxury-card {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+</head>
+<body class="en-font min-h-screen text-center p-4 md:p-10">
+
+    <!-- Language Toggle -->
+    <div class="fixed top-6 right-6 z-50 flex space-x-2 bg-black/30 p-2 rounded-full backdrop-blur-md border border-white/10">
+        <button onclick="setLang('en')" id="btn-en" class="px-4 py-1 rounded-full text-xs font-bold transition duration-300 bg-[#d4af37] text-black">EN</button>
+        <button onclick="setLang('am')" id="btn-am" class="px-4 py-1 rounded-full text-xs font-bold transition duration-300 text-gray-400 hover:text-white">አማ</button>
+    </div>
+
+    <!-- Hero / Landing Page -->
+    <section class="relative max-w-6xl mx-auto mb-20 overflow-hidden rounded-[2rem] border border-[#d4af37]/20 shadow-2xl">
+        <img src="images/image1.jpg" alt="Melkamu and Tigist" class="w-full h-[75vh] md:h-[85vh] object-cover object-center">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/25 to-black/10"></div>
+        <header class="absolute inset-0 flex flex-col items-center justify-end px-6 pb-10 md:pb-16 text-center space-y-4">
+            <p id="label-save" class="tracking-[0.45em] uppercase text-[#d4af37] text-sm font-light">Save the Date</p>
+            <h1 id="names" class="text-4xl sm:text-5xl md:text-7xl text-white font-serif italic drop-shadow-lg">Melkamu & Tigist</h1>
+            <div class="w-24 h-px bg-gradient-to-r from-transparent via-[#d4af37] to-transparent"></div>
+            <p id="date" class="text-lg sm:text-2xl text-gray-200 font-light tracking-wide">Sunday, July 5th, 2026</p>
+        </header>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="max-w-6xl mx-auto mb-24 px-4">
+        <h2 id="gallery-title" class="text-3xl text-[#d4af37] mb-12 font-serif">Our Journey</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- Feature Photo -->
+            <div class="col-span-2 row-span-2">
+                <img src="images/image1.jpg" alt="Our Story" class="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition duration-500 border border-[#d4af37]/30 shadow-2xl">
+            </div>
+            <!-- Gallery Items -->
+            <div><img src="images/image2.jpg" alt="Gallery 1" class="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition duration-500 border border-[#d4af37]/30"></div>
+            <div><img src="images/image3.jpg" alt="Gallery 2" class="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition duration-500 border border-[#d4af37]/30"></div>
+            <div><img src="images/image4.jpg" alt="Gallery 3" class="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition duration-500 border border-[#d4af37]/30"></div>
+            <div><img src="images/image5.jpg" alt="Gallery 4" class="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition duration-500 border border-[#d4af37]/30"></div>
+        </div>
+    </section>
+
+    <!-- Venue & Bot Section -->
+    <section class="max-w-xl mx-auto luxury-card p-12 rounded-lg shadow-2xl border border-white/5 mb-20">
+        <h3 id="venue-title" class="text-xl text-[#d4af37] mb-2 font-serif uppercase tracking-widest">Ceremony Venue</h3>
+        <p class="text-gray-300 text-lg mb-8"><a href="https://maps.app.goo.gl/hcVrzXiRweZJTULU6" target="_blank" rel="noopener noreferrer" class="text-[#d4af37] hover:underline">View location on map</a></p>
+
+        <div class="w-full h-px bg-white/10 mb-8"></div>
+
+        <h3 id="bot-title" class="text-xl text-white mb-4 font-serif">Share your moments</h3>
+        <p id="bot-desc" class="text-sm text-gray-400 mb-8">Upload the photos you take on our day directly to our private album.</p>
+        
+        <!-- Replace with your actual Telegram bot link -->
+        <a href="https://t.me/melkamu_tigist_bot" target="_blank" class="inline-block border border-[#d4af37] text-[#d4af37] px-8 py-3 rounded-full hover:bg-[#d4af37] hover:text-black transition duration-500 font-bold uppercase tracking-widest text-sm">
+            Open Telegram Bot
+        </a>
+    </section>
+
+    <script>
+        const content = {
+            en: {
+                save: "Save the Date",
+                names: "Melkamu & Tigist",
+                date: "Sunday, July 5th, 2026",
+                gallery: "Our Journey",
+                venue: "Ceremony Venue",
+                botTitle: "Share your moments",
+                botDesc: "Upload the photos you take on our day directly to our private album."
+            },
+            am: {
+                save: "ቀኑን ይያዙ",
+                names: "መልካሙ እና ትዕግስት",
+                date: "እሁድ, ሐምሌ 5, 2018 ዓ.ም",
+                gallery: "የኛ ጉዞ",
+                venue: "የሰርጉ ቦታ",
+                botTitle: "ፎቶዎችዎን ያጋሩን",
+                botDesc: "በበዓላችን ቀን ያነሷቸውን ፎቶዎች ወደ ቦታችን ይላኩ።"
+            }
+        };
+
+        function setLang(lang) {
+            document.getElementById('label-save').innerText = content[lang].save;
+            document.getElementById('names').innerText = content[lang].names;
+            document.getElementById('date').innerText = content[lang].date;
+            document.getElementById('gallery-title').innerText = content[lang].gallery;
+            document.getElementById('venue-title').innerText = content[lang].venue;
+            document.getElementById('bot-title').innerText = content[lang].botTitle;
+            document.getElementById('bot-desc').innerText = content[lang].botDesc;
+
+            if (lang === 'am') {
+                document.body.classList.remove('en-font');
+                document.body.classList.add('am-font');
+                document.getElementById('btn-am').className = "px-4 py-1 rounded-full text-xs font-bold transition duration-300 bg-[#d4af37] text-black";
+                document.getElementById('btn-en').className = "px-4 py-1 rounded-full text-xs font-bold transition duration-300 text-gray-400 hover:text-white";
+            } else {
+                document.body.classList.remove('am-font');
+                document.body.classList.add('en-font');
+                document.getElementById('btn-en').className = "px-4 py-1 rounded-full text-xs font-bold transition duration-300 bg-[#d4af37] text-black";
+                document.getElementById('btn-am').className = "px-4 py-1 rounded-full text-xs font-bold transition duration-300 text-gray-400 hover:text-white";
+            }
+        }
+    </script>
+</body>
+</html>
